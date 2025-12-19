@@ -833,25 +833,8 @@ footer{
         <p class="p">Leave your email — we’ll share updates for early testing.</p>
 
         <!-- ✅ Replace FORM_ACTION_URL with a real endpoint (Formspree/Formspark/Google Form) -->
-        <form
-  class="waitlist-form"
-  action="https://formspree.io/f/xbdrlpew"
-  method="POST"
->
-  <input
-    name="email"
-    type="email"
-    placeholder="name@email.com"
-    required
-  >
-
-  <!-- 提交成功后跳转到 Thanks 页面 -->
-  <input
-    type="hidden"
-    name="_redirect"
-    value="https://bestcompany-g1.github.io/rehearsal-site/thanks.html"
-  >
-
+        <form class="waitlist-form" action="https://formspree.io/f/xbdrlpew" method="POST">
+  <input name="email" type="email" placeholder="name@email.com" required>
   <button class="btn primary" type="submit">Join</button>
 </form>
 
