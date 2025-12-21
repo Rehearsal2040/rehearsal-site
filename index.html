@@ -466,133 +466,81 @@ footer{
   border: 1px solid rgba(255,255,255,.28);
   color: rgba(255,255,255,.92);
 }
-
-/* ===== CONTACT: match your screenshot (ONLY affects #contact) ===== */
-#contact .section-head{
-  align-items:center;
-}
-#contact .h2{
-  font-size:48px;
-  line-height:1.05;
-  letter-spacing:-.8px;
-}
-#contact .sub{
-  text-align:right;
-  max-width:520px;
-  color:rgba(255,255,255,.86);
-  font-size:18px;
-  line-height:1.35;
-}
-@media (max-width: 900px){
-  #contact .section-head{ align-items:flex-start; }
-  #contact .h2{ font-size:34px; }
-  #contact .sub{
-    text-align:left;
-    max-width:100%;
-    font-size:14px;
-    line-height:1.6;
-  }
-}
-#contact .card{
-  border-radius:22px;
-  padding:22px;
-  box-shadow:0 18px 36px rgba(0,0,0,.12);
-}
-#contact .waitlist-form{
-  flex-wrap:nowrap;
-  align-items:center;
-  gap:14px;
-}
-#contact .waitlist-form input{
-  height:54px;
-  border-radius:999px;
-  font-size:18px;
-  padding:0 18px;
-  border:2px solid rgba(43,26,18,.14);
-  background:rgba(255,255,255,.96);
-}
-#contact .waitlist-form button.btn.primary{
-  height:54px;
-  padding:0 22px;
-  border-radius:999px;
-  background:rgba(255,255,255,.92);
-  border:1px solid rgba(255,255,255,.65);
-  box-shadow:0 10px 22px rgba(0,0,0,.08);
-  font-size:18px;
-  font-weight:950;
-}
-@media (max-width: 700px){
-  #contact .waitlist-form{ flex-wrap:wrap; }
-  #contact .waitlist-form button.btn.primary{ width:100%; }
-}
-#contact .email-btn{
-  padding:12px 18px !important;
-  border-radius:999px !important;
-  font-size:22px;
-  font-weight:950;
-}
-/* ===== CONTACT title size fix (ONLY CONTACT) ===== */
-#contact .h2{
-  font-size:36px;        /* 桌面端：比现在小、但仍然是主标题 */
-  line-height:1.1;
-  letter-spacing:-.4px;
-}
-
-@media (max-width: 900px){
-  #contact .h2{
-    font-size:30px;      /* 移动端更克制 */
-  }
-}
-/* ===== CONTACT email text: same level as description + bold ===== */
-#contact .email-btn{
-  font-size:14px;        /* 与说明文字同级 */
-  font-weight:800;       /* 加粗，但不夸张 */
-  padding:10px 14px;     /* 比按钮更克制 */
-  border-radius:999px;
-}
-/* ===== CONTACT title smaller ===== */
-#contact .h2{
-  font-size:24px;   /* 原来是 28px */
-  font-weight:900;  /* 仍然有分量，但不抢主视觉 */
-}
-/* ===== Contact section heading refinement ===== */
-#contact .section-head{
-  align-items: flex-start;
-}
-#contact .h2{
-  font-size: 26px;      /* ↓ 比现在小 */
-  font-weight: 900;
-}
-/* ===== FORCE contact right text to stay on ONE line ===== */
-#contact .section-head .sub{
-  white-space: nowrap !important;   /* 不允许换行 */
-  max-width: none !important;       /* 不要用之前的 max-width 限制 */
-  flex: 1 1 auto !important;        /* 允许占用剩余空间 */
-  text-align: right !important;
-  font-size: 15px !important;       /* 需要更小就改 14px */
-  line-height: 1.2 !important;      /* 单行更紧凑 */
-}
-/* ===== FIX contact header layout (same line) ===== */
+/* ===== CONTACT (final clean version) ===== */
 #contact .section-head{
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;            /* ✅ 小屏允许换行 */
 }
 
-/* 左侧标题区域：限制宽度 */
-#contact .section-head > div{
-  flex: 0 0 auto;
-  max-width: 55%;
+#contact .h2{
+  margin: 6px 0 0;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.1;
+  letter-spacing: -0.4px;
+  font-weight: 900;
 }
 
-/* 右侧说明文字：强制同一行 */
-#contact .section-head .sub{
-  flex: 1 1 auto;
-  margin-left: auto;
+#contact .sub{
+  margin: 0;
+  max-width: 520px;
+  color: rgba(255,255,255,.86);
+  font-size: 14px;
+  line-height: 1.4;
   text-align: right;
-  white-space: nowrap;
-  max-width: none;
-  font-size: 15px;   /* 可改 14px */
-  line-height: 1.2;
+  white-space: normal;        /* ❗ 不再强制一行 */
+}
+
+/* 卡片本身 */
+#contact .card{
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 18px 36px rgba(0,0,0,.12);
+}
+
+/* 表单布局 */
+#contact .waitlist-form{
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;            /* ✅ 手机可换行 */
+}
+
+#contact .waitlist-form input{
+  flex: 1 1 240px;
+  height: 52px;
+  border-radius: 999px;
+  font-size: 16px;
+  padding: 0 18px;
+}
+
+#contact .waitlist-form button.btn.primary{
+  height: 52px;
+  padding: 0 22px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+/* Email */
+#contact .email-btn{
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 14px;
+  border-radius: 999px;
+}
+
+/* 📱 Mobile */
+@media (max-width: 700px){
+  #contact .sub{
+    text-align: left;
+    max-width: 100%;
+  }
+  #contact .waitlist-form button.btn.primary{
+    width: 100%;
+  }
 }
 </style>
 </head>
