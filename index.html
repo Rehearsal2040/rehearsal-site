@@ -542,12 +542,21 @@ footer{
   .navlinks{
     flex-wrap:wrap;
   }
-}
+  .slide img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,.06); /* 可留可删 */
+  }
+  /* ✅ 可选：手机端高度调低，视觉更舒服 */
+  .slider{
+    height: 420px;
+  }
   #contact .sub{
     text-align: left;
     max-width: 100%;
   }
-
+} 
   /* ✅ Mobile: force button look SAME as desktop */
   #contact .waitlist-form button.btn.primary{
     width: 100%;
