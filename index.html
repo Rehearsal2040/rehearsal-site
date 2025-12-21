@@ -55,6 +55,7 @@ a{ color:inherit; text-decoration:none; }
 .brand{
   display:flex;
   gap:12px;
+  flex-shrink: 0;
   align-items:center;
 }
 
@@ -62,6 +63,7 @@ a{ color:inherit; text-decoration:none; }
 .logo{
   width:44px;
   height:44px;
+  flex: 0 0 44px; 
   border-radius:16px;
   background:rgba(255,255,255,.18);
   border:1px solid rgba(255,255,255,.30);
@@ -536,13 +538,33 @@ footer{
 }
 
 /* 📱 Mobile */
-@media (max-width: 700px){
+@media (max-width:700px){
+  .navlinks{
+    flex-wrap:wrap;
+  }
+}
   #contact .sub{
     text-align: left;
     max-width: 100%;
   }
+
+  /* ✅ Mobile: force button look SAME as desktop */
   #contact .waitlist-form button.btn.primary{
     width: 100%;
+    height: 54px;
+    padding: 0 22px;
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.92) !important;
+    border: 1px solid rgba(255,255,255,.65) !important;
+    color: rgba(43,26,18,.92) !important;
+
+    box-shadow: 0 10px 22px rgba(0,0,0,.08);
+    font-size: 18px;
+    font-weight: 950;
+
+    appearance: none;
+    -webkit-appearance: none;
   }
 }
 </style>
